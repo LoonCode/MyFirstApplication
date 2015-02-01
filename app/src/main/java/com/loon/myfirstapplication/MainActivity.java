@@ -4,6 +4,9 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -15,6 +18,16 @@ public class MainActivity extends ActionBarActivity {
 //         TextView textView  =new TextView(this);
 //        setContentView(textView);
 //        textView.setText("Test");
+
+        final TextView textView = (TextView) findViewById(R.id.textView);
+
+        final Button button = (Button) findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textView.setText("Test : " + v.getId());
+            }
+        });
 
 
     }
